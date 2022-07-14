@@ -14,7 +14,8 @@ export const registerUser = async (req, res)=>{
 
 export const loginUser = async (req, res)=>{
     try {
-        const {email, password} = req.body;
+        let {email, password} = req.body;
+        email.toLowerCase();
         authenticateUser(res, email, password)
 
     } catch (err) {
